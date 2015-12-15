@@ -1,8 +1,10 @@
-cron-ms (1.0~1) UNRELEASED; urgency=medium
+cron-ms (1.1) UNRELEASED; urgency=medium
 
   * update readme
+  * update changelog
+  * update post init
 
- -- Stanley Karunditu <stanlek@cumulusnetworks.com>  Tue, 15 Dec 2015 17:04:31 +0000
+ -- Stanley Karunditu <stanlek@cumulusnetworks.com>  Tue, 15 Dec 2015 17:10:04 +0000
 
 cron-ms (1.0) unstable; urgency=low
 
