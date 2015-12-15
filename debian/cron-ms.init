@@ -92,4 +92,4 @@ for program in /etc/cron-ms/$1/* ; do
    $program &> /dev/null &
 done
 
-exec $0 $NUMBER_OF_TIMES_PER_SECOND
+exec $0 $NUMBER_OF_TIMES_PER_SEC
