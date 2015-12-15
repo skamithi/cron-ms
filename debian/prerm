@@ -2,8 +2,8 @@
 
 set -e
 # remove cron-ms default script location
-if [ -d "/etc/cron-ms/10" ]; then
-  rm -rf /etc/cron-ms/10/
+if [ -d "/etc/cron-ms/" ]; then
+  rm -rf /etc/cron-ms/
 fi
 
 if [ -d "/var/run/cron-ms" ]; then
