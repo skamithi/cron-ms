@@ -1,0 +1,78 @@
+#! /bin/sh
+
+# chkconfig: 2345 91 61
+# description: This program is used to run all programs in a directory in parallel every X times per minute. \
+#              Think of this program as cron with microseconds resolution.
+
+# Microsecond Cron
+# Usage: cron-ms start
+# Copyright 2014 by Marc Perkel - marc@perkel.com
+# docs at http://wiki.junkemailfilter.com/index.php/How_to_run_a_Linux_script_every_few_seconds_under_cron
+# Free to use with attribution
+
+# The scheduling is done by creating directories with the number of
+# executions per minute as part of the directory name.
+
+# Examples:
+#   /etc/cron-ms/7      # Executes everything in that directory  7 times a minute
+#   /etc/cron-ms/30     # Executes everything in that directory 30 times a minute
+#   /etc/cron-ms/600    # Executes everything in that directory 10 times a second
+#   /etc/cron-ms/2400   # Executes everything in that directory 40 times a second
+
+# Works on Cumulus Linux! Not sure about other Linux Distros
+if [ ! -L /bin/usleep ]; then
+  ln -s /bin/busybox /bin/usleep
+fi
+
+case "$1" in
+
+   start|restart|reload)
+   $0 stop
+   mkdir -p /var/run/cron-ms
+
+   # Here I'm adding some extra directories to the $PATH.
+
+   PATH=/usr/local/sbin:/usr/local/bin:$PATH
+   export PATH
+
+   for dir in /etc/cron-ms/* ; do
+      $0 ${dir##*/} &
+   done
+
+   exit
+   ;;
+
+   stop)
+   rm -Rf /var/run/cron-ms
+   exit
+   ;;
+
+esac
+
+# Loops per minute is passed on the command line as $1
+
+microseconds=$((60000000/$1))
+
+# After a restart the PIDs will be different allowing old processes to terminate
+# Touching /var/run/cron-ms is a heartbeat signal that can be used with monit to verify it's alive
+
+touch /var/run/cron-ms /var/run/cron-ms/$$
+
+# Sleeps until a specific part of a minute with microsecond resolution. 60000000 is full minute
+
+usleep $(( $microseconds - $(date +%s%N) / 1000 % $microseconds ))
+
+# Deleting the PID files exit the program
+
+if [ ! -f /var/run/cron-ms/$$ ]
+then
+   exit
+fi
+
+# Run all the programs in the directory in parallel
+
+for program in /etc/cron-ms/$1/* ; do
+   $program &> /dev/null &
+done
+
+exec $0 $1

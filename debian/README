@@ -1,0 +1,20 @@
+The Debian Package cron-ms
+----------------------------
+
+The following description is taken from the source website
+
+
+Did you ever want to run a program every few seconds, or even fractions of a
+second, under a linux, unix, bsd or osx cron script? Here's an elegant script
+that does just that.
+Features:
+Runs as a service - does not need cron
+Launches multiple programs in parallel
+Multiple time periods supported simultaneously just by the directory name
+2 companion programs to support odd time periods like 37 seconds or 37 minutes
+All standard bash stuff that should run on any *nix systems
+Monit script included to keep it alive
+Simple, elegant, documented, complete, free
+It just works
+
+ -- Stanley Karunditu <stanleyk@cumulusnetworks.com>  Tue, 15 Dec 2015 10:35:11 -0500

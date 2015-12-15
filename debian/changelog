@@ -1,0 +1,7 @@
+cron-ms (1.0) unstable; urgency=low
+
+  * Initial Release.
+  * Original Project found at
+    http://wiki.junkemailfilter.com/index.php/How_to_run_a_Linux_script_every_few_seconds_under_cron
+
+ -- Stanley Karunditu <stanleyk@cumulusnetworks.com>  Tue, 15 Dec 2015 10:35:11 -0500
