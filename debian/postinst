@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# create default cron-ms directory to put scripts
+mkdir -p /etc/cron-ms/10
