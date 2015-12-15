@@ -24,6 +24,11 @@ if [ ! -L /bin/usleep ]; then
   ln -s /bin/busybox /bin/usleep
 fi
 
+# Override this default by configuring this variable
+# in the default file
+NUMBER_OF_TIMES_PER_SEC=10
+if [ -r /etc/default/cron-ms ]; then
+  . /etc/default/cron-ms
 case "$1" in
 
    start|restart|reload)
