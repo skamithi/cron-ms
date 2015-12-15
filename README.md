@@ -13,3 +13,10 @@ Features:
 * Update Monit script included to keep it alive
 * Simple, elegant, documented, complete, free
 
+## Create Deb
+
+Install `git-buildpackage`
+
+Run `git-buildpackage` at the root of the git repo.
+
+
