@@ -4,3 +4,5 @@
 if [ -d "/etc/cron-ms/10" ]; then
   rm -rf /etc/cron-ms/10/
 fi
+
+#DEBHELPER#
