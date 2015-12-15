@@ -1,4 +1,7 @@
-#! /bin/sh
+#! /bin/bash
+
+# in bash you can set the nullglob so that a pattern matches nothing
+shopt -s nullglob
 
 ### BEGIN INIT INFO
 # Provides:          cron-ms
