@@ -31,7 +31,7 @@ if [ -r /etc/default/cron-ms ]; then
   . /etc/default/cron-ms
 case "$1" in
 
-   start|restart|reload)
+   start|restart|reload|force-reload)
    $0 stop
    mkdir -p /var/run/cron-ms
 

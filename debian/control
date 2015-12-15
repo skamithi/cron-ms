@@ -3,7 +3,7 @@ Section: admin
 Priority: optional
 Maintainer: Stanley Karunditu <stanleyk@cumulusnetworks.com>
 Build-Depends: debhelper (>= 8.0.0)
-Standards-Version: 3.9.4
+Standards-Version: 3.9.6
 Homepage: http://wiki.junkemailfilter.com/index.php/How_to_run_a_Linux_script_every_few_seconds_under_cron
 #Vcs-Git: git://git.debian.org/collab-maint/cron-ms.git
 #Vcs-Browser: http://git.debian.org/?p=collab-maint/cron-ms.git;a=summary
