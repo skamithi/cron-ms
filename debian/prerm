@@ -6,4 +6,8 @@ if [ -d "/etc/cron-ms/10" ]; then
   rm -rf /etc/cron-ms/10/
 fi
 
+if [ -d "/var/run/cron-ms" ]; then
+  rm -rf /var/run/cron-ms
+fi
+
 #DEBHELPER#

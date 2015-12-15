@@ -4,4 +4,6 @@ set -e
 # create default cron-ms directory to put scripts
 mkdir -p /etc/cron-ms/10
 
+mkdir -p /var/run/cron-ms
+
 #DEBHELPER#

@@ -39,6 +39,8 @@ fi
 NUMBER_OF_TIMES_PER_SEC=10
 if [ -r /etc/default/cron-ms ]; then
   . /etc/default/cron-ms
+fi
+
 case "$1" in
 
    start|restart|reload|force-reload)
@@ -66,7 +68,7 @@ esac
 
 # Loops per minute is passed on the command line as $1
 
-microseconds=$((60000000/$1))
+microseconds=$((60000000/$NUMBER_OF_TIMES_PER_SEC))
 
 # After a restart the PIDs will be different allowing old processes to terminate
 # Touching /var/run/cron-ms is a heartbeat signal that can be used with monit to verify it's alive
