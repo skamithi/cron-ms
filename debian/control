@@ -10,7 +10,7 @@ Homepage: http://wiki.junkemailfilter.com/index.php/How_to_run_a_Linux_script_ev
 
 Package: cron-ms
 Architecture: all
-Depends: busybox-static, ${misc:Depends}
+Depends: bash, busybox-static, ${misc:Depends}
 Description: Bash script that runs as a service.
  Supports multiple time periods at the same time,
  just by directory name.
