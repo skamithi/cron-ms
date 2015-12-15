@@ -1,0 +1,5 @@
+*.log
+*.debhelper
+debian/cron-ms/
+debian/files
+*.substvars
