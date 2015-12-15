@@ -1,5 +1,0 @@
-#!/bin/bash
-
-update-rc.d cron-ms defaults
-chmod 755 /etc/init.d/cron-ms
-

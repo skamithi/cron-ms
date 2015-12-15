@@ -1,4 +1,0 @@
-#!/bin/bash
-
-# remove cron-ms from boot-time directories
-update-rc.d -f cron-ms remove
