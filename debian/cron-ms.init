@@ -1,5 +1,15 @@
 #! /bin/sh
 
+### BEGIN INIT INFO
+# Provides:          cron-ms
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start daemon at boot time
+# Description:       Bash script that asks like cron
+### END INIT INFO
+
 # chkconfig: 2345 91 61
 # description: This program is used to run all programs in a directory in parallel every X times per minute. \
 #              Think of this program as cron with microseconds resolution.
@@ -80,4 +90,4 @@ for program in /etc/cron-ms/$1/* ; do
    $program &> /dev/null &
 done
 
-exec $0 $1
+exec $0 $NUMBER_OF_TIMES_PER_SECOND
